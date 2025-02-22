@@ -1,6 +1,6 @@
 # 🚀 4Chat v1.0.0 Release - Secure Communication Redefined
 
-![4Chat Banner](https://raw.githubusercontent.com/4insec/4chat/main/assets/release-banner.png)
+![4Chat Banner](release-banner.png)
 
 ## 📦 Download Latest Release
 
