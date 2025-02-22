@@ -1,0 +1,7 @@
+.venv
+*.db
+*.deb
+*.spec
+package/*
+dist/*
+build/*
