@@ -73,13 +73,13 @@ jobs:
       
       - name: Run Lintian (Debian package validator)
         run: |
-          lintian --no-tag-display-limit blackchat_*.deb || true  # Continue even if warnings
+          lintian --no-tag-display-limit 4Chat_*.deb || true  # Continue even if warnings
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: 4Chat-debian-package
-          path: blackchat_*.deb
+          path: 4Chat_*.deb
           retention-days: 7
       
       - name: Upload Docker files
@@ -137,7 +137,7 @@ jobs:
             
             #### Debian/Ubuntu
             ```bash
-            sudo dpkg -i blackchat_${{ env.VERSION }}_amd64.deb
+            sudo dpkg -i 4Chat_${{ env.VERSION }}_amd64.deb
             sudo apt-get install -f  # Install dependencies if needed
             ```
             
@@ -153,5 +153,5 @@ jobs:
             ### Changelog
             - See the [CHANGELOG.md](https://github.com/4insec/4Chat/blob/main/CHANGELOG.md) for details
           files: |
-            blackchat_*.deb
+            4Chat_*.deb
             4Chat-server-docker-*.tar.gz
