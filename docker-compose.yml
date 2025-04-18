@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:alpine
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    
+  4chat-server:
+    build: .
+    depends_on:
+      - redis
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./ssl:/app/ssl
+    environment:
+      - REDIS_HOST=redis
+      - HOST=0.0.0.0
+      - PORT=8765
+      - SSL_CERT=/app/ssl/cert.pem
+      - SSL_KEY=/app/ssl/key.pem
+    restart: unless-stopped
+
+volumes:
+  redis_data:
