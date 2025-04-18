@@ -76,14 +76,14 @@ jobs:
           lintian --no-tag-display-limit blackchat_*.deb || true  # Continue even if warnings
       
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: 4Chat-debian-package
           path: blackchat_*.deb
           retention-days: 7
       
       - name: Upload Docker files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: 4Chat-docker-files
           path: |
